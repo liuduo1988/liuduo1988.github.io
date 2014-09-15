@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014 | 刘铎的博客</title>
+  <title>在Hexo上安家了 | 刘铎的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="刘铎的博客">
-<meta property="og:url" content="http://liuduo1988.github.io/archives/2014/">
+  <meta name="description" content="今天又把博客整回到了Github Pages上，用的是Node.js语言编写的Hexo博客程序。其实一年前就开了一个博客，购买了主机和域名，先是转载了一些技术文章，然后自己也写了几篇，后来就没坚持了，几个月过去了都没上过博客。
+如今机缘巧合之下（帮老婆弄Discuz），又想起了这个博客，于是打算重新弄一下，一切从头开始。因为最近对Git命令的使用和理解有了很大的提高，在GitHub上放置Hexo代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Hexo上安家了">
+<meta property="og:url" content="http://liuduo1988.github.io/2014/08/28/在Hexo上安家了/">
 <meta property="og:site_name" content="刘铎的博客">
-<meta property="og:description">
+<meta property="og:description" content="今天又把博客整回到了Github Pages上，用的是Node.js语言编写的Hexo博客程序。其实一年前就开了一个博客，购买了主机和域名，先是转载了一些技术文章，然后自己也写了几篇，后来就没坚持了，几个月过去了都没上过博客。
+如今机缘巧合之下（帮老婆弄Discuz），又想起了这个博客，于是打算重新弄一下，一切从头开始。因为最近对Git命令的使用和理解有了很大的提高，在GitHub上放置Hexo代">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="刘铎的博客">
-<meta name="twitter:description">
+<meta name="twitter:title" content="在Hexo上安家了">
+<meta name="twitter:description" content="今天又把博客整回到了Github Pages上，用的是Node.js语言编写的Hexo博客程序。其实一年前就开了一个博客，购买了主机和域名，先是转载了一些技术文章，然后自己也写了几篇，后来就没坚持了，几个月过去了都没上过博客。
+如今机缘巧合之下（帮老婆弄Discuz），又想起了这个博客，于是打算重新弄一下，一切从头开始。因为最近对Git命令的使用和理解有了很大的提高，在GitHub上放置Hexo代">
 
   
     <link rel="alternative" href="/atom.xml" title="刘铎的博客" type="application/atom+xml">
@@ -71,57 +74,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Xcode6-GM中Cocoapods库中的Expected-a-type报错解决方案" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/09/15/Xcode6-GM中Cocoapods库中的Expected-a-type报错解决方案/" class="article-date">
-  <time datetime="2014-09-15T03:40:34.000Z" itemprop="datePublished">Sep 15 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/iOS/">iOS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/09/15/Xcode6-GM中Cocoapods库中的Expected-a-type报错解决方案/">Xcode6 GM中Cocoapods库中的Expected a type报错解决方案</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>感觉Xcode 6 GM还是有不少的bug，最近新建项目遇到一个问题，新建一个项目，在项目中通过Cocoapods导入自己的库后，在主项目中引用并使用库中的类，库中的.h文件会报<strong>Expected a type</strong>错误<br>研究之后觉得原因是：Xcode6 GM新建的项目默认是没有pch文件的，所以并没有全局包含UIKit和Foundation，因为没有包含UIKit，所以对UIViewController这样的类无法识别，而报出错误。</p>
-<p>解决方法是在包含自己库中的头文件前加一句<code>@import UIKit;</code> 或<code>#import &lt;UIKit/UIKit&gt;</code>，一定要在所有的import最上面加。</p>
-<p>期间遇到了两个Xcode的Bug：  </p>
-<p><strong>Bug1:</strong><br>Pods库中的某一个文件无法保存，报错file not exsit，也无法编译，更导致Xcode无法退出，只能强推，觉得是Xcode的bug。  </p>
-<p><strong>Bug2:</strong><br>在项目中自己创建pch文件后，想把它用作全局包含，需要在build settings中配置Prefix Header和Precompile Prefix Header，有时候会出现Prefix Header中配置的文件路径是对的，但是会报”找不到文件会文件夹”错误的问题。  </p>
-<p>会在iOS Developer Forums中反映一下这两个问题。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://liuduo1988.github.io/2014/09/15/Xcode6-GM中Cocoapods库中的Expected-a-type报错解决方案/" data-id="73dbp7933jjj57ew" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Xcode/">Xcode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-在Hexo上安家了" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-在Hexo上安家了" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/28/在Hexo上安家了/" class="article-date">
   <time datetime="2014-08-28T15:39:08.000Z" itemprop="datePublished">Aug 28 2014</time>
@@ -134,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/28/在Hexo上安家了/">在Hexo上安家了</a>
+    <h1 class="article-title" itemprop="name">
+      在Hexo上安家了
     </h1>
   
 
@@ -166,11 +119,24 @@ hexo <span class="keyword">server</span></span>
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+    <a href="/2014/09/15/Xcode6-GM中Cocoapods库中的Expected-a-type报错解决方案/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Xcode6 GM中Cocoapods库中的Expected a type报错解决方案
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
 </article>
 
-
-  
-  
 </section>
         
           <aside id="sidebar">
